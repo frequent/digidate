@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Digital Date Pilot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="rsvp.js"></script>
+    <script type="text/javascript" src="renderjs.js"></script>
+    <script type="text/javascript" src="pilot_app.js"></script>
+</head>
+<body>
+<div class="dd-header">
+  <div class="dd-header-left">
+    <form action="dd_updateAvailability">
+      <div class="dd-checkbox">
+        <label class="dd-btn dd-corner-all dd-checkbox-label">I'm here</label>
+        <input name="dd_updateAvailability_myself" type="checkbox" value="available" class="dd-checkbox-input">
+      </div>
+    </form>
+  </div>
+  <div class="dd-header-center">
+    <div class="dd-icon dd-icon-connect">&npsb;</div>
+    <div class="dd-checkbox">
+      <label class="dd-btn dd-corner-all dd-checkbox-label">I'm here</label>
+      <input name="dd_viewAvailability_theSignificantOther" type="checkbox" value="not avaialble" class="dd-checkbox-input">
+    </div>
+  </div>
+  <div class="dd-header-right">
+    <form action="dd_toggleMenu">
+      <div class="dd-input-btn dd-corner-all">
+        <input name="dd_toggleInteractionMenu" type="submit" value="Hey, ..." class="dd-input" />
+      </div>
+    </form>
+    <div class="dd-menu dd-menu-top">
+      <form action="dd_interact">
+        <div class="dd-spacer-100">
+          <div class="dd-input-text dd-corner-all">
+            <input name="dd_interact_text" type="text" value="" class="dd-input" />
+          </div>
+        </div>
+        <div class="dd-spacer-25">
+          <div class="dd-input-btn dd-corner-all">
+            <input name="dd_interact_left" type="button" value="Left" class="dd-input" />
+          </div>
+        </div>
+        <div class="dd-spacer-25">
+          <div class="dd-input-btn dd-corner-all">
+            <input name="dd_interact_right" type="button" value="Right" class="dd-input" />
+          </div>
+        </div>
+        <div class="dd-spacer-25">
+          <div class="dd-input-btn dd-corner-all">
+            <input name="dd_interact_forward" type="button" value="Forward" class="dd-input" />
+          </div>
+        </div>
+        <div class="dd-spacer-25">
+          <div class="dd-input-btn dd-corner-all">
+            <input name="dd_interact_back" type="button" value="Back" class="dd-input" />
+          </div>
+        </div>
+        <div class="dd-spacer-25">
+          <div class="dd-input-btn dd-corner-all">
+            <input name="dd_interact_go" type="button" value="Go" class="dd-input" />
+          </div>
+        </div>
+        <div class="dd-spacer-25">
+          <div class="dd-input-btn dd-corner-all">
+            <input name="dd_interact_turn" type="button" value="Turn" class="dd-input" />
+          </div>
+        </div>
+        <div class="dd-spacer-25">
+          <div class="dd-input-btn dd-corner-all">
+            <input name="dd_interact_use" type="button" value="Use" class="dd-input" />
+          </div>
+        </div>
+        <div class="dd-spacer-25">
+          <div class="dd-input-btn dd-corner-all">
+            <input name="dd_interact_find" type="button" value="Find" class="dd-input" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="dd-body">
+  <div class="dd-stream"></div>
+</div>
+</body>
+</html>

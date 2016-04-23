@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+	  <title>Digital Date Robot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="rsvp.js"></script>
+    <script type="text/javascript" src="renderjs.js"></script>
+    
+    <script type="text/javascript" src="adapter.js"></script>
+    <script type="text/javascript" src="robot_app.js"></script>
+
+</head>
+<body>
+<div class="dd-header">
+  <div class="dd-header-left">
+    <form action="dd_updateAvailability">
+      <div class="dd-checkbox">
+        <label class="dd-btn dd-corner-all dd-checkbox-label">I'm here</label>
+        <input name="dd_updateAvailability_myself" type="checkbox" value="available" class="dd-checkbox-input">
+      </div>
+    </form>
+  </div>
+  <div class="dd-header-center">
+    <div class="dd-icon dd-icon-connect">&npsb;</div>
+    <div class="dd-checkbox">
+      <label class="dd-btn dd-corner-all dd-checkbox-label">I'm here</label>
+      <input name="dd_viewAvailability_theSignificantOther" type="checkbox" value="not avaialble" class="dd-checkbox-input">
+    </div>
+  </div>
+  <div class="dd-header-right">
+    <form action="dd_toggleMenu">
+      <div class="dd-input-btn dd-corner-all">
+        <input name="dd_toggleInteractionMenu" type="submit" value="Snapshot" class="dd-input" />
+      </div>
+    </form>
+    <div class="dd-menu dd-menu-top">
+      <!--
+      <div class="dd-select">
+        <label class="dd-select-label">Audio input source: </label>
+        <select name="device_setAudioSourceInput" class="dd-select-input audioSource"></select>
+      </div>
+
+      <div class="dd-select">
+        <label class="dd-select-label">Audio output destination: </label>
+        <select name="device_setAudioSourceOutput" class="dd-select-input audioOutput"></select>
+      </div>
+      -->
+      
+      <div class="dd-select">
+        <label class="dd-select-label">Video source: </label>
+        <select name="device_setVideoSourceInput" class="dd-select-input videoSource"></select>
+      </div>
+
+      <video id="video" autoplay></video>
+      <img class="dd-video-output-image" src="" alt="" />
+      <canvas class="dd-video-output-canvas" width="640" height="480" style="display:none;"></canvas>
+      
+      <form action="dd_snapshot" name="snapshot">
+        <div class="dd-input-btn dd-corner-all">
+          <input name="dd_takeSnapshotFromVideo" type="submit" value="Take Snapshot" class="dd-input" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="dd-body">
+  <div class="dd-stream"></div>
+</div>
+</body>
+</html>
