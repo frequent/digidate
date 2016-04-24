@@ -6467,7 +6467,7 @@ return new Parser;
         var ceilHeapSize = function (v) {
             // The asm.js spec says:
             // The heap object's byteLength must be either
-            // 2^n for n in [12, 24) or 2^24 * n for n â¥ 1.
+            // 2^n for n in [12, 24) or 2^24 * n for n ≥ 1.
             // Also, byteLengths smaller than 2^16 are deprecated.
             var p;
             // If v is smaller than 2^16, the smallest possible solution
@@ -7649,8 +7649,9 @@ return new Parser;
                           "which contains more than one character.");
     }
     if (typeof spec.root !== 'string' || !spec.root ||
-        (spec.root !== "dropbox" && spec.root !== "sandbox")) {
-      throw new TypeError("root must be 'dropbox' or 'sandbox'");
+        (spec.root !== "dropbox" && spec.root !== "sandbox"
+          && spec.root !== "auto")) {
+      throw new TypeError("root must be 'dropbox', 'sandbox' or 'auto'");
     }
     this._access_token = spec.access_token;
     this._root = spec.root;
