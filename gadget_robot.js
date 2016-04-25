@@ -92,7 +92,6 @@
         );
       })
       .push(function (my_oauth_dict) {
-        console.log(my_oauth_dict);
         return my_gadget.jio_create({
           "type": "dropbox",
           "access_token": my_oauth_dict.access_token,
@@ -117,7 +116,6 @@
     if (window.opener === null) {
         return new RSVP.Queue()
           .push(function () {
-            console.log("huhu")
             robot_createConnectInterface(my_gadget, "Dropbox");
             
             // triggers ouath2 login
@@ -308,7 +306,8 @@
         form_list = Array.prototype.slice.call(element_dict.querySelectorAll("form")),
         promise_list,
         len,
-        i;
+        i,
+        test_uuid;
       
       function formCallbackHandler(my_event) {
         var form_name = my_event.target.name,
@@ -324,18 +323,24 @@
         }
         
         if (form_name === "publish") {
+          test_uuid = uuid();
           return new RSVP.Queue()
             .push(function () {
               return gadget.jio_putAttachment(
                 "/test/",
-                "pic" + uuid(), 
+                "pic-" + test_uuid, 
                 new Blob([dict.imageOutput.src], {type: "image/webp"})
               );
             })
-            .push(function (x) {
-              console.log("stored image");
-              console.log(x);
+            .push(function () {
+              return gadget.jio_getAttachment(
+                "/test/",
+                "pic-" + test_uuid
+              );
             })
+            .push(function (my_response) {
+              console.log(my_response);
+            });
         }
       }
       
