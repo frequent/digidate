@@ -333,12 +333,14 @@
               );
             })
             .push(function () {
+              console.log("DONE, now retrieve")
               return gadget.jio_getAttachment(
                 "/test/",
                 "pic-" + test_uuid
               );
             })
             .push(function (my_response) {
+              console.log("DONE")
               console.log(my_response);
             });
         }
