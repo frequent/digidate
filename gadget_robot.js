@@ -329,20 +329,8 @@
               return gadget.jio_putAttachment(
                 "/test/",
                 "pic-" + test_uuid, 
-                new Blob([dict.imageOutput.src], {type: "image/webp"})
+                new Blob([dict.imageOutput.src], {type: "image/png"})
               );
-            })
-            .push(function () {
-              return gadget.jio_getAttachment(
-                "/test/",
-                "pic-" + test_uuid
-              );
-            })
-            .push(function (my_response) {
-              return jIO.util.readBlobAsText(my_response);
-            })
-            .push(function (my_decoded_response) {
-              console.log(my_decoded_response);
             });
         }
       }
