@@ -333,15 +333,16 @@
               );
             })
             .push(function () {
-              console.log("DONE, now retrieve")
               return gadget.jio_getAttachment(
                 "/test/",
                 "pic-" + test_uuid
               );
             })
             .push(function (my_response) {
-              console.log("DONE")
-              console.log(my_response);
+              return jIO.util.readBlobAsText(my_response);
+            })
+            .push(function (my_decoded_response) {
+              console.log(my_decoded_response);
             });
         }
       }
